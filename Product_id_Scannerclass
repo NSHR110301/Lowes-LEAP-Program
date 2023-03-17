@@ -1,0 +1,74 @@
+package project_id;
+
+import java.util.Scanner;
+
+
+
+
+
+public class A {
+
+
+	    public static void main(String[] args) {
+	        // Create a Scanner object to read input from the user
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Get the number of products from the user
+	        System.out.print("Enter the number of products: ");
+	        int numProducts = scanner.nextInt();
+
+	        // Initialize the total cost to zero
+	        double totalCost = 0;
+
+	        // Iterate over the range of products and get input for each one
+	        for (int i = 0; i < numProducts; i++) {
+	            System.out.print("Enter the product ID: ");
+	            int pid = scanner.nextInt();
+	            scanner.nextLine(); 
+
+	            System.out.print("Enter the product name: ");
+	            String pname = scanner.nextLine();
+
+	            System.out.print("Enter the unit price: ");
+	            double up = scanner.nextDouble();
+
+	            System.out.print("Enter the quantity: ");
+	            int qty = scanner.nextInt();
+
+	            System.out.print("Enter the current stock: ");
+	            int stk = scanner.nextInt();
+
+	            // Check if there is enough stock to fulfill the order
+	            if (qty > stk) {
+	                System.out.println("Out of stock");
+	                continue;
+	            }
+
+	            // Calculate the total cost and update the stock
+	            double cost = up * qty;
+	            totalCost += cost;
+	            stk -= qty;
+
+	            // Print the transaction details
+	            System.out.println("=============");
+	            System.out.println("Product ID: " + pid);
+	            System.out.println("Product Name: " + pname);
+	            System.out.println("Quantity: " + qty);
+	            System.out.println("Unit Price: " + up);
+	            System.out.println("Total Cost: " + cost);
+	            System.out.println("Remaining Stock: " + stk);
+	            System.out.println("=============");
+	        }
+
+	        // Print the total cost
+	        System.out.println("Total Cost: " + totalCost);
+
+	        
+	        scanner.close();
+	
+
+		
+		
+	}
+
+}
