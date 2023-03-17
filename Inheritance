@@ -1,0 +1,49 @@
+class B
+{
+void m2()
+{
+System.out.println("iam in b");
+}
+}
+
+class A
+{
+void m1()
+{
+System.out.println("iam in a");
+}
+
+public static void main(String []ar)
+{
+A a=new A();
+a.m1();
+a.m2();
+}
+
+}
+
+o/p: error as there is no relationship btwn a and b, they are independant classes
+soln: create an object
+class B
+{
+void m2()
+{
+System.out.println("iam in b");
+}
+}
+
+class A
+{
+void m1()
+{
+System.out.println("iam in a");
+}
+
+public static void main(String []ar)
+{
+A a=new A();
+B b=new B();
+a.m1();
+b.m2();
+}
+}
