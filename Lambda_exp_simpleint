@@ -1,0 +1,30 @@
+package lamba_exp;
+
+@FunctionalInterface
+interface Interest{  
+    public int cal(int p,int r,int t);  
+}  
+  
+
+
+
+public class simple_int {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int p=100,r=5,t=2;
+		
+        Interest si=(p,r,t)->{  
+        	int simpint=(p*r*t)/100;
+        	
+            System.out.println("simple interest is "+simpint);  
+        };  
+      
+    }  
+		
+		
+	}
+
+}
+
